@@ -37,4 +37,4 @@ plt.figure(figsize=(wedme.SLIDE_TW, wedme.SLIDE_HH))
 ```
 
 ## Examples
-<img src="./img/calibration_curve_rot.png" width="512">
+<img src="https://github.com/mruijzendaal/wedme-plots/blob/main/img/calibration_curve_rot.png?raw=true" width="512">
