@@ -18,6 +18,16 @@ SIZE_10 = 90 * _MM_TO_INCH
 SIZE_15 = 140 * _MM_TO_INCH
 SIZE_20 = 190 * _MM_TO_INCH
 
+PAPER_FW = 190 * _MM_TO_INCH
+PAPER_CW = 90 * _MM_TO_INCH
+
+SLIDE_FH = 7.5
+SLIDE_HH = SLIDE_FH / 2
+SLIDE_TH = SLIDE_FH / 3
+SLIDE_FW = SLIDE_FH * 16 / 9
+SLIDE_HW = SLIDE_FW / 2
+SLIDE_TW = SLIDE_FW / 3
+
 
 def _apply_style(stylename):
     with _resources.path("wedme", f"{stylename}.mplstyle") as file_path:
@@ -25,7 +35,7 @@ def _apply_style(stylename):
 
 
 def slides():
-    _apply_style("umppt")
+    _apply_style("slides")
 
 
 def paper():
@@ -37,4 +47,4 @@ def poster():
 
 
 # Version of wedme-plots package
-__version__ = "1.0"
+__version__ = "1.2"
