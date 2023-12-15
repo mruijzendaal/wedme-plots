@@ -47,4 +47,4 @@ def poster():
 
 
 # Version of wedme-plots package
-__version__ = "1.3"
+__version__ = "1.4"
