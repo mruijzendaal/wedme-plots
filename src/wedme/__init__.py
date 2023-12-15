@@ -30,7 +30,7 @@ SLIDE_TW = SLIDE_FW / 3
 
 
 def _apply_style(stylename):
-    with _resources.path("wedme", f"{stylename}.mplstyle") as file_path:
+    with _resources.files("wedme") / f"{stylename}.mplstyle" as file_path:
         _plt.style.use(file_path)
 
 

@@ -1,4 +1,4 @@
-# wedme-plots: We Don't Make Embarrassing Plots
+# 👗 wedme-plots: We Don't Make Embarrassing Plots
 
 Matplotlib styles for papers, posters and presentations. 
 
