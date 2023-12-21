@@ -7,7 +7,7 @@ name = "wedme-plots"
 version = "1.6.1"
 description = "We Don't Make Embarrassing Plots. Matplotlib styles for papers, posters and presentations."
 readme = "README.md"
-authors = [{ name = "Martijn Ruijzendaal", email = "martijn [dot] ruijzendaal [at] gmail.com" }]
+authors = [{ name = "Martijn Ruijzendaal", email = "martijn.ruijzendaal@gmail.com" }]
 license = { file = "LICENSE" }
 classifiers = [
     "License :: OSI Approved :: MIT License",

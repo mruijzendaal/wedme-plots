@@ -58,24 +58,36 @@ def poster():
 
 ## Some more utility functions
 class _metafigure(type):
+    # Catch-all for figure types. Any method call to this class will get intercepted here.
     def __getattr__(cls, name: str):
+        # `name` is the name of the method that was called
         nameparts = name.upper().split("_")
+
+        # If the name is not of the form `TYPE_WIDTH_HEIGHT`, then we assume it is just a type
         if len(nameparts) != 3:
             figsize = None
             tname = nameparts[0]
+        # Otherwise, we assume it is of the form `TYPE_WIDTH_HEIGHT`
         else:
+            # Extract the type, width, and height
             tname, wname, hname = name.upper().split("_")
             wname = "_".join([tname, wname])
             hname = "_".join([tname, hname])
 
+            # Get the width and height from the defined variables in this script
             h = globals()[hname]
             w = globals()[wname]
             figsize = (w, h)
 
+        # Define a new function that calls the `figure` method with the appropriate arguments
+
         def myfig(*args, **kwargs):
+            # Update the keyword arguments with the figure size
             kws = {}
             kws.update(kwargs)
             kws.update(figsize=figsize)
+
+            # Call the appropriate figure type
             if tname == "PAPER":
                 paper()
             elif tname == "SLIDE" or tname == "SLIDES":
@@ -84,8 +96,12 @@ class _metafigure(type):
                 poster()
             else:
                 raise ValueError(f"Unknown figure type {tname}")
-            _plt.figure(*args, **kws)
 
+            # Call the figure method with the updated arguments
+            return _plt.figure(*args, **kws)
+
+        # Return the new function handle. When one calls `wedme.figure.TYPE_WIDTH_HEIGHT()`,
+        # `wedme.figure.TYPE_WIDTH_HEIGHT` returns the function handle `myfig`
         return myfig
 
 
