@@ -11,6 +11,7 @@ Import the `wedme` module to apply styles:
 from importlib import resources as _resources
 import matplotlib.pyplot as _plt
 
+## Size definitions
 _MM_TO_INCH = 0.0393700787
 
 SIZE_SM = 30 * _MM_TO_INCH
@@ -31,8 +32,6 @@ SLIDE_TW = SLIDE_FW / 3
 
 
 ## Functions for applying the wedme styles
-
-
 def _apply_style(stylename):
     with _resources.files("wedme") / f"{stylename}.mplstyle" as file_path:
         _plt.style.use(file_path)
@@ -63,6 +62,7 @@ class _metafigure(type):
         nameparts = name.upper().split("_")
         if len(nameparts) != 3:
             figsize = None
+            tname = nameparts[0]
         else:
             tname, wname, hname = name.upper().split("_")
             wname = "_".join([tname, wname])
@@ -76,6 +76,14 @@ class _metafigure(type):
             kws = {}
             kws.update(kwargs)
             kws.update(figsize=figsize)
+            if tname == "PAPER":
+                paper()
+            elif tname == "SLIDE" or tname == "SLIDES":
+                slides()
+            elif tname == "POSTER":
+                poster()
+            else:
+                raise ValueError(f"Unknown figure type {tname}")
             _plt.figure(*args, **kws)
 
         return myfig
@@ -83,11 +91,3 @@ class _metafigure(type):
 
 class figure(metaclass=_metafigure):
     pass
-
-
-# Version of wedme-plots package
-__version__ = "1.6"
-
-if __name__ == "__main__":
-    figure.paper_cw_gh()
-    _plt.show()

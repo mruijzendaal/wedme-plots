@@ -51,9 +51,14 @@ plt.figure(figsize=(wedme.SLIDE_TW, wedme.SLIDE_HH))
 
 Alternatively, we provide functions to compress the above code:
 ```python
-wedme.slide_tw_hh()
+wedme.figure.slide_tw_hh()
 ```
 Such a function exists for every combination of heights and widths for a given style.
+
+To open a figure with one of `wedme`'s styles, use e.g.
+```python
+wedme.figure.slide()
+```
 
 ## Fonts
 Sans-serif fonts are the standards for figures because they remain readable even when small or pixelated. Helvetica or Arial fonts are preferred by Nature, Science and Elsevier. 
