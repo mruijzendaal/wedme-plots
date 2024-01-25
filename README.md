@@ -2,20 +2,36 @@
 
 Matplotlib styles for papers, posters and presentations. Tailored for academic use.
 
+## Too long; didn't read
+```python
+import wedme
+
+# Open a figure in `paper` style, with size (PAPER_CW, PAPER_DH)
+# which equals (journal column width, default height)
+wedme.figure.paper_cw_dh()
+
+# Open a figure with the style `slide` and size (SLIDE_TW, SLIDE_HH) 
+# which equals (1/3 slide width, 1/2 slide height)
+wedme.figure.slide_tw_hh()
+```
+
 ## Styling
-We applied a clean style. The style and sizes of `paper` style are compatible with most journals (Nature, Science, Elsevier). The `slides` style is compatible with a Microsoft Powerpoint presentation. `poster` (not implemented yet) is compatible with A0 posters.
+We applied a clean style. The style and sizes of `paper` style are compatible with most journals (Nature, Science, Elsevier). The `slide` style is compatible with a Microsoft Powerpoint presentation. `poster`  is compatible with A0 posters.
 
 ## Usage
 Import the `wedme` module and apply the desired style. Then proceed with `matplotlib` plotting as you're used to.
 
+Example:
 ```python
 import wedme
+
+# These commands apply a style to subsequent Matplotlib figures.
 
 # For Elsevier-compatible paper styles
 wedme.paper()
 
-# For 16:9 Powerpoint slides
-wedme.slides()
+# For a 16:9 Powerpoint slide
+wedme.slide()
 
 # For A0 posters (not implemented yet)
 wedme.poster()
@@ -45,6 +61,8 @@ For custom figure sizes, we include reference points for every style:
 
 These can be used as follows:
 ```python
+import wedme
+wedme.slide()
 # Create a new figure that occupies 33% of the width of a ppt slide and 50% its height.
 plt.figure(figsize=(wedme.SLIDE_TW, wedme.SLIDE_HH))
 ```
@@ -55,10 +73,15 @@ wedme.figure.slide_tw_hh()
 ```
 Such a function exists for every combination of heights and widths for a given style.
 
-To open a figure with one of `wedme`'s styles, use e.g.
+To open a figure with one of `wedme`'s styles without applying any sizing, use e.g.
 ```python
 wedme.figure.slide()
 ```
+
+## Powerpoint
+Powerpoint automatically resizes artwork to a size that is different from the export size. To undo this:
+- Insert the figure in Powerpoint.
+- Picture Format > Reset Picture > Reset Picture & Size.
 
 ## Fonts
 Sans-serif fonts are the standards for figures because they remain readable even when small or pixelated. Helvetica or Arial fonts are preferred by Nature, Science and Elsevier. 

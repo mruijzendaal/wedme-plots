@@ -21,7 +21,7 @@ ytick.right : True
 
 # Image
 image.cmap : nipy_spectral
-image.interpolation : none
+image.interpolation : nearest
 image.aspect : equal
 
 # Legend
@@ -30,6 +30,8 @@ legend.framealpha : 1.0
 legend.fancybox : False
 legend.numpoints : 1
 legend.edgecolor : 0.35
+legend.columnspacing : 1.0
+legend.handlelength : 100
 
 # Grid lines
 axes.grid : True

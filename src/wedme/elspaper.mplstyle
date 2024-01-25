@@ -6,7 +6,7 @@ savefig.pad_inches : 0.03
 
 # Set default figure size
 figure.figsize : 3.54, 2.5 
-figure.dpi : 200
+figure.dpi : 300
 
 # Set x axis
 xtick.major.size : 3
@@ -27,6 +27,7 @@ lines.markersize: 3
 # Legend
 legend.borderpad : 0.4
 legend.handlelength : 1
+legend.handletextpad : 0.5
 legend.edgecolor : 0.35
 patch.linewidth : 0.5
 
