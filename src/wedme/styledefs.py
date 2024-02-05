@@ -1,4 +1,4 @@
-from importlib import resources as _resources
+import importlib_resources as _resources
 import matplotlib.pyplot as _plt
 import matplotlib as _mpl
 from wedme.const import *
