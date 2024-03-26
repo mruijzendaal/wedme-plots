@@ -10,8 +10,8 @@ figure.dpi : 200
 
 # Paddings and margins
 axes.labelpad : 3
-ytick.major.pad : 4
-xtick.major.pad : 4
+ytick.major.pad : 6
+xtick.major.pad : 6
 
 # Set x axis
 xtick.major.size : 4.5
