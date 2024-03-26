@@ -38,6 +38,19 @@ def poster():
     _apply_style("a0")
 
 
+def apply_style(stylename):
+    # Call the appropriate figure type
+    if stylename == "PAPER":
+        paper()
+    elif stylename == "SLIDE" or stylename == "SLIDES":
+        stylename = "SLIDE"
+        slide()
+    elif stylename == "POSTER":
+        poster()
+    else:
+        raise ValueError(f"Unknown figure type {stylename}")
+
+
 ## Some more utility functions
 class _metafigure(type):
     # Catch-all for figure types. Any method call to this class will get intercepted here.
@@ -57,7 +70,7 @@ class _metafigure(type):
         else:
             # Extract the type, width, and height
             wname, hname = nameparts[1:]
-            if wname.startswith("H"):
+            if wname.endswith("H"):
                 hname, wname = nameparts[1:]
 
             wname = "_".join([stylename, wname])
@@ -75,16 +88,7 @@ class _metafigure(type):
             kws.update(kwargs)
             kws.update(figsize=figsize)
 
-            # Call the appropriate figure type
-            if stylename == "PAPER":
-                paper()
-            elif stylename == "SLIDE" or stylename == "SLIDES":
-                stylename = "SLIDE"
-                slide()
-            elif stylename == "POSTER":
-                poster()
-            else:
-                raise ValueError(f"Unknown figure type {stylename}")
+            apply_style(stylename)
 
             # Call the figure method with the updated arguments
             return _plt.figure(*args, **kws)
