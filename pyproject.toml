@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "wedme-plots"
-version = "2.1"
+version = "2.0.2"
 description = "We Don't Make Embarrassing Plots. Matplotlib styles for papers, posters and presentations."
 readme = "README.md"
 authors = [{ name = "Martijn Ruijzendaal", email = "martijn.ruijzendaal@gmail.com" }]
