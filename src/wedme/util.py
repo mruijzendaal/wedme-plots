@@ -3,9 +3,10 @@ import matplotlib as _mpl
 import numpy as _np
 
 
-def colorbar(label, labelpad=10, **kwargs):
-    cax = _plt.colorbar(**kwargs)
-    cax.set_label(label, rotation=270, labelpad=labelpad)
+def colorbar(mappable=None, label="", labelpad=10, labelkwargs={}, **kwargs):
+    cax = _plt.colorbar(mappable=mappable, **kwargs)
+    cax.set_label(label, rotation=270, labelpad=labelpad, **labelkwargs)
+    return cax
 
 
 def imshow(
@@ -24,15 +25,28 @@ def imshow(
     return _plt.imshow(data, *args, vmin=vmin, vmax=vmax, *args, **kwargs)
 
 
-def get_colormap_norm(cmap_name="viridis", X=None, min=None, max=None):
+def get_colormap_norm(cmap="viridis", X=None, min=None, max=None):
     if not X is None:
         min = _np.nanmin(_np.array(X))
         max = _np.nanmax(_np.array(X))
 
-    cmap = _plt.cm.get_cmap(cmap_name)
+    cmap = _plt.cm.get_cmap(cmap)
     norm = _mpl.colors.Normalize(vmin=min, vmax=max)
 
     return lambda x: cmap(norm(x))
+
+
+def get_colormap_norm_for_colorbar(cmap="viridis", X=None, min=None, max=None):
+    if not X is None:
+        min = _np.nanmin(_np.array(X))
+        max = _np.nanmax(_np.array(X))
+
+    cmap = _plt.cm.get_cmap(cmap)
+    norm = _mpl.colors.Normalize(vmin=min, vmax=max)
+    fun = lambda x: cmap(norm(x))
+    scalar_mappable = _mpl.cm.ScalarMappable(norm=norm, cmap=cmap)
+
+    return fun, scalar_mappable
 
 
 def unique_legend(ax=None, **kwargs):
