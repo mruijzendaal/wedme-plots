@@ -128,8 +128,7 @@ class GifMaker(object):
             frametime_ms (int, optional): The time in milliseconds between frames. Defaults to 800.
             resize_fac (float, optional): The factor by which to resize the frames. Defaults to 1.0.
         """
-        delay = round(frametime_ms / 10)
-        create_gif(f"{self._tempdir.name}/*.png", outname, resize_fac, delay)
+        create_gif(f"{self._tempdir.name}/*.png", outname, resize_fac, frametime_ms)
 
     def close(self, outname):
         """
