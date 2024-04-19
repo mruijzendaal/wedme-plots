@@ -1,1 +1,1 @@
-include src/wedme/*.mplstyle
+include src/wedme/stylesheets/*.mplstyle

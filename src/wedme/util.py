@@ -37,6 +37,17 @@ def get_colormap_norm(cmap="viridis", X=None, min=None, max=None):
 
 
 def get_colormap_norm_for_colorbar(cmap="viridis", X=None, min=None, max=None):
+    """Generates a colormap and a scalar mappable for use in a colorbar.
+    This might be useful when plotting multiple lines with different colors based on a parameter.
+
+    Example usage:
+        cmap, scalarmappable = wedme.util.get_colormap_norm_for_colorbar("nipy_spectral", min=340, max=386)
+
+        for i, result in enumerate(myresults):
+            plt.plot(result.x, result.y, color=cmap(delay), label=f"{delay}ns")
+
+        wedme.colorbar(scalarmappable, label="Q-switch delay [ns]")
+    """
     if not X is None:
         min = _np.nanmin(_np.array(X))
         max = _np.nanmax(_np.array(X))
