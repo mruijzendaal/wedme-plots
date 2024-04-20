@@ -1,5 +1,5 @@
 # Matplotlib style for scientific plotting
-# See https://matplotlib.org/stable/users/explain/customizing.html and  https://github.com/garrettj403/SciencePlots
+# See https://matplotlib.org/stable/users/explain/customizing.html
 
 savefig.dpi : 1000
 savefig.pad_inches : 0.03
@@ -9,15 +9,20 @@ figure.figsize : 3.54, 2.5
 figure.dpi : 300
 
 # Set x axis
-xtick.major.size : 3
-xtick.major.width : 0.5
-xtick.minor.size : 1.5
+ytick.major.size : 3
+ytick.major.width : 0.5
+xtick.major.pad : 2
+ytick.minor.size : 1.5
+ytick.minor.width : 0.5
+xtick.minor.pad : 2
 
 # Set y axis
 ytick.major.size : 3
 ytick.major.width : 0.5
+xtick.major.pad : 2
 ytick.minor.size : 1.5
 ytick.minor.width : 0.5
+xtick.minor.pad : 2
 
 # Set line widths
 axes.linewidth : 0.5
@@ -33,7 +38,6 @@ patch.linewidth : 0.5
 
 # Grid lines
 grid.linewidth : 0.5
-
 
 # Font sizes
 axes.labelsize: 7

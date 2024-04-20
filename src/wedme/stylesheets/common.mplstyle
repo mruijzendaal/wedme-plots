@@ -29,6 +29,7 @@ image.interpolation : nearest
 image.aspect : equal
 
 # Legend
+legend.loc : best
 legend.frameon : True
 legend.framealpha : 1.0
 legend.fancybox : False

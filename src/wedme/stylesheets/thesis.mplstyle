@@ -1,5 +1,5 @@
 # Matplotlib style for scientific plotting
-# See https://matplotlib.org/stable/users/explain/customizing.html and  https://github.com/garrettj403/SciencePlots
+# See https://matplotlib.org/stable/users/explain/customizing.html
 
 savefig.dpi : 1000
 savefig.pad_inches : 0.03
