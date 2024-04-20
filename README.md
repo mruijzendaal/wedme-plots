@@ -27,7 +27,7 @@ Wedme offers multiple styles:
 - `paper`: compatible with most journals (Nature, Science, Elsevier). 
 - `slide`: compatible with a (16:9) Microsoft Powerpoint presentation. 
 - `a0`: A0 poster.
-- `thesis`: (work-in-progress) similar to `paper` but for the B5 page format.
+- `thesis`: (work-in-progress) similar to `paper` but for a single-column B5 page.
 
 ## Usage
 There are two ways of applying a wedme style. 
@@ -109,7 +109,7 @@ The default width and height `DW` and `DH` correspond to `CW` and `GH` of the `p
 
 When no size is specified, the following defaults sizes are used:
 - `paper`: `(wedme.PAPER_CW, wedme.paper_GH)`
-- `slide`: `(wedme.SLIDE_TW, wedme.slide_HH)`
+- `slide`: `(wedme.SLIDE_TTW, wedme.slide_TTH)`
 - `a0`:  `(wedme.A0_TW, ...)`
 - `thesis`: `(wedme.THESIS_DW, wedme.paper_DH)`
 
