@@ -14,3 +14,4 @@ from wedme.shorthands import figure, subplots, apply
 from wedme.const import *
 
 from wedme.gif import GifMaker
+from wedme import scale
