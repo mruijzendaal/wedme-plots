@@ -9,20 +9,20 @@ figure.figsize : 3.54, 2.5
 figure.dpi : 300
 
 # Set x axis
-ytick.major.size : 3
-ytick.major.width : 0.5
+xtick.major.size : 3
+xtick.major.width : 0.5
 xtick.major.pad : 2
-ytick.minor.size : 1.5
-ytick.minor.width : 0.5
+xtick.minor.size : 1.5
+xtick.minor.width : 0.5
 xtick.minor.pad : 2
 
 # Set y axis
 ytick.major.size : 3
 ytick.major.width : 0.5
-xtick.major.pad : 2
+ytick.major.pad : 2
 ytick.minor.size : 1.5
 ytick.minor.width : 0.5
-xtick.minor.pad : 2
+ytick.minor.pad : 2
 
 # Set line widths
 axes.linewidth : 0.5
