@@ -6,10 +6,7 @@ from wedme.const import *
 
 ## Functions for applying the wedme styles
 def _apply_style(stylename):
-    with _resources.files(
-        "wedme"
-    ) / "stylesheets" / f"{stylename}.mplstyle" as file_path:
-        _plt.style.use(file_path)
+    _plt.style.use(_resources.files("wedme") / "stylesheets" / f"{stylename}.mplstyle")
 
 
 def reset():
