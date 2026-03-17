@@ -11,6 +11,7 @@ def savefig(
     format=[".png", ".pdf"],
     dpi=1000,
     history=False,
+    **kwargs,
 ):
     # If multiple formats are given, recursively call this function for each
     if type(format) == list:
@@ -38,4 +39,10 @@ def savefig(
         )
 
     # Save the figure
-    plt.savefig(path, dpi=dpi, facecolor="#00f0", pad_inches=0)
+    plt.savefig(
+        path,
+        dpi=dpi,
+        facecolor="#00f0",
+        pad_inches=kwargs.get("pad_inches", 0),
+        **kwargs,
+    )
