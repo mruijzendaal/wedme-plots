@@ -65,6 +65,10 @@ def get_colormap_norm_for_colorbar(cmap="viridis", X=None, min=None, max=None):
     return fun, scalar_mappable
 
 
+def get_colors_in_cycle(cmap="tab10", n=10):
+    return _plt.cm.get_cmap(cmap)(_np.linspace(0, 1, n))
+
+
 def unique_legend(ax=None, **kwargs):
     if ax is None:
         ax = _plt.gca()
