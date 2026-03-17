@@ -40,7 +40,16 @@ def create_gif(frames, outname, resize_fac=1.0, frametime_ms=800):
     delay_ms = round(frametime_ms / 10)
     _run_command(
         [
-            "convert",
+            "magick",
+            "-limit",
+            "memory",
+            "2GB",  # Increase memory limit
+            "-limit",
+            "map",
+            "4GB",  # Increase memory map limit
+            "+dither",  # Disable dithering for speed
+            "-colors",
+            "256",  # Limit colors for smaller file size
             "-resize",
             f"{resize_fac*100:.0f}%",
             "-delay",
@@ -54,7 +63,7 @@ def create_gif(frames, outname, resize_fac=1.0, frametime_ms=800):
 
 
 def _check_imagemagick():
-    return _run_command(["convert", "-version"], silent=True) == 0
+    return _run_command(["magick", "-version"], silent=True) == 0
 
 
 class GifMaker(object):
