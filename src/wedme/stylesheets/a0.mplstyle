@@ -41,8 +41,13 @@ patch.linewidth : 2
 grid.linewidth : 2
 
 # Font sizes
-axes.labelsize: 22
-xtick.labelsize: 22
-ytick.labelsize: 22
-legend.fontsize: 22
-font.size: 22
+#axes.labelsize: 22
+#xtick.labelsize: 22
+#ytick.labelsize: 22
+#legend.fontsize: 22
+#font.size: 22
+axes.labelsize: 28
+xtick.labelsize: 28
+ytick.labelsize: 28
+legend.fontsize: 28
+font.size: 28

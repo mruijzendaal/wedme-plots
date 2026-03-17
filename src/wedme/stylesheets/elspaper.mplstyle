@@ -27,7 +27,7 @@ ytick.minor.pad : 2
 # Set line widths
 axes.linewidth : 0.5
 lines.linewidth : 1.
-lines.markersize: 3
+lines.markersize: 2
 
 # Legend
 legend.borderpad : 0.4
