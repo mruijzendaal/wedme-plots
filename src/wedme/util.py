@@ -70,8 +70,14 @@ def unique_legend(ax=None, **kwargs):
         ax = _plt.gca()
 
     handles, labels = ax.get_legend_handles_labels()
-    unique_labels, unique_handles = _np.unique(labels, return_index=True)
-    unique_handles = [handles[i] for i in unique_handles]
+    unique_labels, idx_unique = _np.unique(labels, return_index=True)
+
+    # Sort back to original order
+    unique_labels = unique_labels[_np.argsort(idx_unique)]
+    idx_unique = _np.sort(idx_unique)
+
+    # Get corresponding handles
+    unique_handles = [handles[i] for i in idx_unique]
     return _plt.legend(unique_handles, unique_labels, **kwargs)
 
 
