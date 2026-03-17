@@ -24,7 +24,7 @@ PAPER_PW = 345 * _PT_TO_INCH
 # Thesis
 THESIS_PW = 6.9  # page width
 THESIS_PH = 9.8  # page height
-THESIS_DW = 90 * _MM_TO_INCH  # approximately half the page
+THESIS_DW = 80 * _MM_TO_INCH  # approximately half the page
 THESIS_DH = THESIS_DW / GOLDEN_RATIO
 # Landscape
 THESIS_LFW = THESIS_PH  # TODO: subtract margins
@@ -59,9 +59,11 @@ A0_TH = A0_FH / 3
 A0_QH = A0_FH / 4
 A0_RH = A0_FH / 5
 A0_SH = A0_FH / 6
+A0_EH = A0_FH / 8
 # Width
 A0_FW = 33.1
 A0_HW = A0_FW / 2
+A0_FTW = A0_FW * 5 / 12
 A0_TW = A0_FW / 3
 A0_QW = A0_FW / 4
 A0_RW = A0_FW / 5
